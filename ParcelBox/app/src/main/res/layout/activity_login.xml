@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="kr.ac.sungshin.parcelbox.login.LoginActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_top"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginRight="@dimen/basic_margin"
+        android:layout_marginLeft="@dimen/basic_margin"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        >
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+            <EditText
+                android:id="@+id/login_edittext_email"
+                android:theme="@style/WhiteLineEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/large_margin"
+                android:background="@drawable/white_underline"
+                android:paddingBottom="5dp"
+                android:gravity="bottom"
+                android:hint="이메일"
+                android:ellipsize="end"
+                android:textColorHint="@color/colorWhite"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/large_text"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/login_edittext_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/large_margin"
+                android:background="@drawable/white_underline"
+                android:paddingBottom="5dp"
+                android:singleLine="true"
+                android:hint="비밀번호"
+                android:ellipsize="end"
+                android:textColorHint="@color/colorWhite"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/large_text"
+                android:inputType="textPassword" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/large_more_margin"
+                android:layout_marginRight="@dimen/basic_margin"
+                android:layout_marginLeft="@dimen/basic_margin">
+                <CheckBox
+                    android:id="@+id/login_checkbox_savingId"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginRight="@dimen/large_margin"
+                    android:gravity="center_horizontal"
+                    android:checked="false"
+                    android:text="아이디 저장"
+                    android:textColor="@color/colorWhite"
+                    android:button="@drawable/check_off"
+                    android:textSize="@dimen/basic_text"/>
+                <CheckBox
+                    android:id="@+id/login_checkbox_autoLogin"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/large_margin"
+                    android:gravity="center_horizontal"
+                    android:checked="false"
+                    android:text="자동 로그인"
+                    android:textColor="@color/colorWhite"
+                    android:button="@drawable/check_off"
+                    android:textSize="@dimen/basic_text"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/login_button_login"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/small_margin"
+                    android:layout_weight="1"
+                    android:background="@drawable/login3_unpress" />
+
+                <Button
+                    android:id="@+id/login_button_signUp"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/small_margin"
+                    android:layout_weight="1"
+                    android:background="@drawable/join3_unpress"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                android:text="아이디 / 비밀번호를 잊으셨나요?"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

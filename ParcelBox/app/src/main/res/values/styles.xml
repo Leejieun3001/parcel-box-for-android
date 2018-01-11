@@ -7,5 +7,14 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
+    <!-- White underline editText -->
+    <style name="WhiteLineEditText" parent="Widget.AppCompat.EditText">
+        <item name="colorControlActivated">#FFFFFF</item>
+        <item name="colorControlNormal">#FFFFFF</item>
+    </style>
+    <!-- No ActionBar -->
+    <style name="NoActionBar" parent="@android:style/Theme.Holo.Light">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
 </resources>
