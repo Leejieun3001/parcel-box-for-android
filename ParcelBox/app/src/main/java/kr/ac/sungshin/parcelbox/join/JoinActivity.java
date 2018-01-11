@@ -1,15 +1,16 @@
-package kr.ac.sungshin.parcelbox.login;
+package kr.ac.sungshin.parcelbox.join;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import kr.ac.sungshin.parcelbox.R;
 
-public class SignupActivity extends AppCompatActivity {
+public class JoinActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup);
+        setContentView(R.layout.activity_join);
+
     }
 }
