@@ -2,7 +2,6 @@ package kr.ac.sungshin.parcelbox.login;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,7 +15,6 @@ import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import kr.ac.sungshin.parcelbox.MainActivity;
 import kr.ac.sungshin.parcelbox.R;
 import kr.ac.sungshin.parcelbox.model.request.Login;
 import kr.ac.sungshin.parcelbox.model.response.User;
@@ -125,7 +123,7 @@ public class LoginActivity extends AppCompatActivity {
         buttonSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
+                Intent intent = new Intent(getApplicationContext(), JoinActivity.class);
                 startActivity(intent);
             }
         });
