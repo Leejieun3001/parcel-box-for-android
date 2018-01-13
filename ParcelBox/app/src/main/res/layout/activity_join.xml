@@ -44,7 +44,7 @@
             <EditText
                 android:id="@+id/join_edittext_id"
                 android:layout_width="150dp"
-                android:layout_height="30dp"
+                android:layout_height="35dp"
                 android:hint="   아이디"
                 android:textSize="12dp" />
 
@@ -67,16 +67,39 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="4dp"
-                android:text="중복확인" />
+                android:text="이메일 중복확인" />
 
             <Button
-                android:id="@+id/join_button_emailcheck"
+                android:id="@+id/join_button_requestcode"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="4dp"
-                android:text="이메일 인증" />
+                android:text="이메일 인증번호 요청" />
         </LinearLayout>
+        <LinearLayout
 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/join_edittext_checkcode"
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:hint="   인증번호"
+                android:textSize="12dp" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/join_button_checkcode"
+                android:text="인증"
+                />
+
+
+        </LinearLayout>
         <LinearLayout
 
             android:layout_width="wrap_content"
@@ -90,7 +113,7 @@
             <EditText
                 android:id="@+id/join_edittext_password"
                 android:layout_width="150dp"
-                android:layout_height="30dp"
+                android:layout_height="35dp"
                 android:hint="   비밀번호"
                 android:password="true"
                 android:textSize="12dp" />
@@ -111,12 +134,44 @@
                 android:id="@+id/join_edittext_repassword"
 
                 android:layout_width="150dp"
-                android:layout_height="30dp"
+                android:layout_height="35dp"
                 android:hint="   비밀번호 확인"
                 android:password="true"
                 android:textSize="12dp" />
         </LinearLayout>
 
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+        <RadioGroup
+            android:id="@+id/join_radiogroup_type"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+
+            >
+        <RadioButton
+            android:id="@+id/택배기사"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:text="택배기사"/>
+
+         <RadioButton
+             android:id="@+id/택배수령자"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:text="택배 수령자"/>
+        </RadioGroup>
+
+        </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -128,7 +183,7 @@
             <EditText
                 android:id="@+id/join_edittext_name"
                 android:layout_width="150dp"
-                android:layout_height="30dp"
+                android:layout_height="35dp"
                 android:hint="   이름"
                 android:textSize="12dp" />
         </LinearLayout>
@@ -143,7 +198,7 @@
             <EditText
                 android:id="@+id/join_edittext_phone"
                 android:layout_width="150dp"
-                android:layout_height="30dp"
+                android:layout_height="35dp"
                 android:hint="   핸드폰 번호"
                 android:textSize="12dp" />
         </LinearLayout>
@@ -159,7 +214,7 @@
             <EditText
                 android:id="@+id/join_edittext_address"
                 android:layout_width="150dp"
-                android:layout_height="30dp"
+                android:layout_height="35dp"
                 android:hint="   거주지 정보"
                 android:textSize="12dp" />
         </LinearLayout>
