@@ -21,7 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".login.JoinActivity"></activity>
+        <activity android:name=".login.JoinActivity" />
+        <activity android:name=".login.FindInfoActivity" />
+        <activity android:name=".login.ShowIdActivity"></activity>
     </application>
 
 </manifest>

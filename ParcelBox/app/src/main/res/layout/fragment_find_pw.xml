@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_top" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/basic_margin"
+        android:layout_marginRight="@dimen/basic_margin"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/small_margin"
+            android:gravity="center"
+            android:layout_weight="4"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/findpw_edittext_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/large_margin"
+                android:background="@drawable/white_underline"
+                android:ellipsize="end"
+                android:gravity="bottom"
+                android:hint="아이디"
+                android:paddingBottom="5dp"
+                android:singleLine="true"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="@dimen/large_text"
+                android:theme="@style/WhiteLineEditText" />
+
+            <EditText
+                android:id="@+id/findpw_edittext_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/large_margin"
+                android:background="@drawable/white_underline"
+                android:ellipsize="end"
+                android:gravity="bottom"
+                android:hint="이름"
+                android:paddingBottom="5dp"
+                android:singleLine="true"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="@dimen/large_text"
+                android:theme="@style/WhiteLineEditText" />
+
+            <EditText
+                android:id="@+id/findpw_edittext_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/large_margin"
+                android:background="@drawable/white_underline"
+                android:ellipsize="end"
+                android:gravity="bottom"
+                android:hint="핸드폰번호('-' 없이 입력해주세요.)"
+                android:inputType="phone"
+                android:paddingBottom="5dp"
+                android:singleLine="true"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="@dimen/large_text"
+                android:theme="@style/WhiteLineEditText" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/findpw_button_findpw"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/small_margin"
+            android:layout_weight="1"
+            android:text="비밀번호찾기" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import butterknife.BindView;
@@ -38,6 +39,8 @@ public class LoginActivity extends AppCompatActivity {
     Button buttonLogin;
     @BindView(R.id.login_button_signUp)
     Button buttonSignUp;
+    @BindView(R.id.login_textview_findInfo)
+    TextView textViewFindInfo;
 
     private NetworkService service;
     private final String TAG = "LoginActivity";
@@ -65,16 +68,22 @@ public class LoginActivity extends AppCompatActivity {
         checkBoxAutoLogin.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) { checkBoxAutoLogin.setBackgroundResource(R.drawable.check_on); }
-                else { checkBoxAutoLogin.setBackgroundResource(R.drawable.check_off); }
+                if (isChecked) {
+                    checkBoxAutoLogin.setBackgroundResource(R.drawable.check_on);
+                } else {
+                    checkBoxAutoLogin.setBackgroundResource(R.drawable.check_off);
+                }
             }
         });
 
         checkBoxSavingId.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) { checkBoxAutoLogin.setBackgroundResource(R.drawable.check_on); }
-                else { checkBoxAutoLogin.setBackgroundResource(R.drawable.check_off); }
+                if (isChecked) {
+                    checkBoxAutoLogin.setBackgroundResource(R.drawable.check_on);
+                } else {
+                    checkBoxAutoLogin.setBackgroundResource(R.drawable.check_off);
+                }
             }
         });
 
@@ -123,13 +132,20 @@ public class LoginActivity extends AppCompatActivity {
         buttonSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), JoinActivity.class);
+                Intent intent = new Intent(getBaseContext(), JoinActivity.class);
+                startActivity(intent);
+            }
+        });
+        textViewFindInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(), FindInfoActivity.class);
                 startActivity(intent);
             }
         });
     }
 
-    public void setUserEmail () {
+    public void setUserEmail() {
         SharedPreferences userInfo = getSharedPreferences("user", MODE_PRIVATE);
         String remainEmail = userInfo.getString("email", "");
 
