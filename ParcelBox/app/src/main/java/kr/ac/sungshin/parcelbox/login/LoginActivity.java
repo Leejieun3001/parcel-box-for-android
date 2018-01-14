@@ -2,7 +2,6 @@ package kr.ac.sungshin.parcelbox.login;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,11 +11,11 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import kr.ac.sungshin.parcelbox.MainActivity;
 import kr.ac.sungshin.parcelbox.R;
 import kr.ac.sungshin.parcelbox.model.request.Login;
 import kr.ac.sungshin.parcelbox.model.response.User;
@@ -40,6 +39,8 @@ public class LoginActivity extends AppCompatActivity {
     Button buttonLogin;
     @BindView(R.id.login_button_signUp)
     Button buttonSignUp;
+    @BindView(R.id.login_textview_findInfo)
+    TextView textViewFindInfo;
 
     private NetworkService service;
     private final String TAG = "LoginActivity";
@@ -67,16 +68,22 @@ public class LoginActivity extends AppCompatActivity {
         checkBoxAutoLogin.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) { checkBoxAutoLogin.setBackgroundResource(R.drawable.check_on); }
-                else { checkBoxAutoLogin.setBackgroundResource(R.drawable.check_off); }
+                if (isChecked) {
+                    checkBoxAutoLogin.setBackgroundResource(R.drawable.check_on);
+                } else {
+                    checkBoxAutoLogin.setBackgroundResource(R.drawable.check_off);
+                }
             }
         });
 
         checkBoxSavingId.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) { checkBoxAutoLogin.setBackgroundResource(R.drawable.check_on); }
-                else { checkBoxAutoLogin.setBackgroundResource(R.drawable.check_off); }
+                if (isChecked) {
+                    checkBoxAutoLogin.setBackgroundResource(R.drawable.check_on);
+                } else {
+                    checkBoxAutoLogin.setBackgroundResource(R.drawable.check_off);
+                }
             }
         });
 
@@ -125,13 +132,20 @@ public class LoginActivity extends AppCompatActivity {
         buttonSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
+                Intent intent = new Intent(getBaseContext(), JoinActivity.class);
+                startActivity(intent);
+            }
+        });
+        textViewFindInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(), FindInfoActivity.class);
                 startActivity(intent);
             }
         });
     }
 
-    public void setUserEmail () {
+    public void setUserEmail() {
         SharedPreferences userInfo = getSharedPreferences("user", MODE_PRIVATE);
         String remainEmail = userInfo.getString("email", "");
 

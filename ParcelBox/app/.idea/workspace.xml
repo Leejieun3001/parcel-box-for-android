@@ -50,11 +50,31 @@
       <file leaf-file-name="LoginActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/kr/ac/sungshin/parcelbox/login/LoginActivity.java">
           <provider selected="true" editor-type-id="text-editor">
+
             <state relative-caret-position="2828">
               <caret line="124" column="20" lean-forward="false" selection-start-line="124" selection-start-column="8" selection-end-line="124" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="false" />
               </folding>
+
+            <state relative-caret-position="168">
+              <caret line="30" column="4" lean-forward="true" selection-start-line="30" selection-start-column="4" selection-end-line="31" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SignupActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/kr/ac/sungshin/parcelbox/login/SignupActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+
+            <state relative-caret-position="-392">
+              <caret line="124" column="20" lean-forward="false" selection-start-line="124" selection-start-column="8" selection-end-line="124" selection-end-column="20" />
+
+              <folding />
+
             </state>
           </provider>
         </entry>
@@ -72,7 +92,10 @@
       <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/kr/ac/sungshin/parcelbox/model/response/User.java">
           <provider selected="true" editor-type-id="text-editor">
+
             <state relative-caret-position="168">
+
+
               <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
               <folding>
                 <element signature="e#600#601#0" expanded="false" />
@@ -92,7 +115,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_join.xml" pinned="false" current-in-tab="false">
+
+
+      <file leaf-file-name="activity_join.xml" pinned="false" current-in-tab="true">
+
         <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_join.xml">
           <provider editor-type-id="android-designer2">
             <state />
@@ -127,14 +153,18 @@
           </provider>
         </entry>
       </file>
+
       <file leaf-file-name="activity_login.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_login.xml">
           <provider editor-type-id="android-designer2">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
+
             <state relative-caret-position="2352">
               <caret line="84" column="46" lean-forward="false" selection-start-line="84" selection-start-column="46" selection-end-line="84" selection-end-column="46" />
+
+
               <folding />
             </state>
           </provider>
@@ -148,7 +178,19 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="672">
               <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+<<<<<<< HEAD
               <folding />
+=======
+              <folding>
+<<<<<<< HEAD
+                <marker date="1515677710880" expanded="true" signature="1000:1011" ph="..." />
+                <marker date="1515677710880" expanded="true" signature="1000:1030" ph="..." />
+=======
+                <marker date="1515676473799" expanded="true" signature="997:1008" ph="..." />
+                <marker date="1515676473799" expanded="true" signature="997:1027" ph="..." />
+>>>>>>> jieun
+              </folding>
+>>>>>>> 94b25a064bb81df1ab0d7f013b398fb58995ab49
             </state>
           </provider>
         </entry>
@@ -2003,6 +2045,10 @@
         <option value="$PROJECT_DIR$/src/main/java/kr/ac/sungshin/parcelbox/model/response/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/kr/ac/sungshin/parcelbox/join/JoinActivity.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_join.xml" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/src/main/java/kr/ac/sungshin/parcelbox/login/SignupActivity.java" />
+=======
+>>>>>>> jieun
       </list>
     </option>
   </component>
@@ -2054,6 +2100,23 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
             </PATH_ELEMENT>
+<<<<<<< HEAD
+=======
+            <PATH_ELEMENT>
+              <option name="myItemId" value="parcelbox" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+<<<<<<< HEAD
+=======
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="request" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+>>>>>>> 94b25a064bb81df1ab0d7f013b398fb58995ab49
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -2072,6 +2135,14 @@
               <option name="myItemId" value="parcelbox" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
+<<<<<<< HEAD
+=======
+            <PATH_ELEMENT>
+>>>>>>> jieun
+              <option name="myItemId" value="login" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+>>>>>>> 94b25a064bb81df1ab0d7f013b398fb58995ab49
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -2082,6 +2153,8 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
             </PATH_ELEMENT>
+<<<<<<< HEAD
+=======
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
@@ -2095,6 +2168,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+<<<<<<< HEAD
+=======
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ParcelBox" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+            </PATH_ELEMENT>
+>>>>>>> jieun
+          </PATH>
+>>>>>>> 94b25a064bb81df1ab0d7f013b398fb58995ab49
         </subPane>
       </pane>
       <pane id="ProjectPane" />
@@ -2198,7 +2285,15 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+<<<<<<< HEAD
         <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1515907689722" />
+=======
+<<<<<<< HEAD
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1515678020615" />
+=======
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1515677667191" />
+>>>>>>> jieun
+>>>>>>> 94b25a064bb81df1ab0d7f013b398fb58995ab49
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2246,7 +2341,15 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+<<<<<<< HEAD
         <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1515907689722" />
+=======
+<<<<<<< HEAD
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1515678020615" />
+=======
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1515677667191" />
+>>>>>>> jieun
+>>>>>>> 94b25a064bb81df1ab0d7f013b398fb58995ab49
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2408,7 +2511,15 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+<<<<<<< HEAD
         <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1515907689724" />
+=======
+<<<<<<< HEAD
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1515678020624" />
+=======
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1515677667195" />
+>>>>>>> jieun
+>>>>>>> 94b25a064bb81df1ab0d7f013b398fb58995ab49
       </method>
     </configuration>
     <list size="1">
@@ -2454,9 +2565,18 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2518797" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+=======
+<<<<<<< HEAD
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2518797" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2518797" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+>>>>>>> jieun
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> 94b25a064bb81df1ab0d7f013b398fb58995ab49
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2655,7 +2775,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="672">
           <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+<<<<<<< HEAD
           <folding />
+=======
+          <folding>
+<<<<<<< HEAD
+            <marker date="1515677710880" expanded="true" signature="1000:1011" ph="..." />
+            <marker date="1515677710880" expanded="true" signature="1000:1030" ph="..." />
+=======
+            <marker date="1515676473799" expanded="true" signature="997:1008" ph="..." />
+            <marker date="1515676473799" expanded="true" signature="997:1027" ph="..." />
+>>>>>>> jieun
+          </folding>
+>>>>>>> 94b25a064bb81df1ab0d7f013b398fb58995ab49
         </state>
       </provider>
     </entry>
@@ -2667,11 +2799,25 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/kr/ac/sungshin/parcelbox/login/SignupActivity.java" />
+=======
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/kr/ac/sungshin/parcelbox/login/SignupActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 94b25a064bb81df1ab0d7f013b398fb58995ab49
     <entry file="file://$PROJECT_DIR$/src/main/java/kr/ac/sungshin/parcelbox/login/LoginActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2828">
           <caret line="124" column="20" lean-forward="false" selection-start-line="124" selection-start-column="8" selection-end-line="124" selection-end-column="20" />
+<<<<<<< HEAD
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
@@ -2679,6 +2825,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kr/ac/sungshin/parcelbox/model/request/Join.java" />
+=======
+          <folding />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> jieun
+    <entry file="file://$PROJECT_DIR$/src/main/java/kr/ac/sungshin/parcelbox/model/request/Join.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+=======
+>>>>>>> 94b25a064bb81df1ab0d7f013b398fb58995ab49
     <entry file="file://$PROJECT_DIR$/src/main/java/kr/ac/sungshin/parcelbox/model/response/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -2700,6 +2863,7 @@
         </state>
       </provider>
     </entry>
+>>>>>>> jieun
     <entry file="file://$PROJECT_DIR$/src/main/java/kr/ac/sungshin/parcelbox/join/JoinActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -2715,8 +2879,17 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="2352">
           <caret line="84" column="46" lean-forward="false" selection-start-line="84" selection-start-column="46" selection-end-line="84" selection-end-column="46" />
+=======
+        <state relative-caret-position="341">
+<<<<<<< HEAD
+          <caret line="84" column="59" lean-forward="false" selection-start-line="84" selection-start-column="59" selection-end-line="84" selection-end-column="59" />
+=======
+          <caret line="84" column="59" lean-forward="true" selection-start-line="84" selection-start-column="59" selection-end-line="84" selection-end-column="59" />
+>>>>>>> jieun
+>>>>>>> 94b25a064bb81df1ab0d7f013b398fb58995ab49
           <folding />
         </state>
       </provider>
@@ -2740,5 +2913,32 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/main/java/kr/ac/sungshin/parcelbox/model/response/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kr/ac/sungshin/parcelbox/login/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="30" column="4" lean-forward="true" selection-start-line="30" selection-start-column="4" selection-end-line="31" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kr/ac/sungshin/parcelbox/login/SignupActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> jieun
   </component>
 </project>
