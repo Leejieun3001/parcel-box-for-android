@@ -6,37 +6,43 @@ package kr.ac.sungshin.parcelbox.model.request;
 
 public class Join {
 
-    private String id;
-    private String password;
-    private int type;
-    private String name;
-    private String address;
-    private String phone;
+    private String memberId;
+    private String memberPassWord;
+    private String memberName;
+    private String memberPhone;
+    private int memberType;
+    private String memberAddress;
 
-    public Join(String id, String password, int type, String name, String phone ,String address ) {
-        this.id = id;
-        this.password = password;
-        this.type = type;
-        this.name = name;
-        this.address = address;
-        this.phone = phone;
+    public Join(String memberId, String memberPassWord, String memberName, String memberPhone , int memberType,String memberAddress ) {
+        this.memberId = memberId;
+        this.memberPassWord = memberPassWord;
+        this.memberName = memberName;
+        this.memberPhone = memberPhone;
+        this.memberType = memberType;
+        this.memberAddress = memberAddress;
     }
 
-    // getter function
-    public String getId() {
-        return id;
+    public String getMemberId() {
+        return memberId;
     }
-    public  String getPassword() {return password;}
-    public int getType() {
-        return type;
+
+    public String getMemberPassWord() {
+        return memberPassWord;
     }
-    public String getName() {
-        return name;
+
+    public String getMemberName() {
+        return memberName;
     }
-    public String getPhone() {
-        return phone;
+
+    public String getMemberPhone() {
+        return memberPhone;
     }
-    public String getAddress() {
-        return address;
+
+    public int getMemberType() {
+        return memberType;
+    }
+
+    public String getMemberAddress() {
+        return memberAddress;
     }
 }

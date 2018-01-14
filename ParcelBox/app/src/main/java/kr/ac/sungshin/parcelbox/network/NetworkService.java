@@ -31,4 +31,7 @@ public interface NetworkService {
 
     @GET("/join/verificationCode/")
     Call<VerificationCodeResult> getVerifiCodeResult(@Query("tempEmail") String id);
+
+    @POST("/join")
+    Call<Message> getJoinResult(@Body Join join);
 }
