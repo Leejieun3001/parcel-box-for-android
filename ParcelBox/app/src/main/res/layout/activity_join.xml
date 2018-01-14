@@ -98,7 +98,6 @@
                 android:text="인증"
                 />
 
-
         </LinearLayout>
         <LinearLayout
 
@@ -149,27 +148,28 @@
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
-        <RadioGroup
-            android:id="@+id/join_radiogroup_type"
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
+            <RadioGroup
+                android:id="@+id/join_radiogroup_type"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
 
-            >
-        <RadioButton
-            android:id="@+id/택배기사"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+                >
+                <RadioButton
+                    android:id="@+id/택배기사"
+                    android:checked="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
 
-            android:text="택배기사"/>
+                    android:text="택배기사"/>
 
-         <RadioButton
-             android:id="@+id/택배수령자"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:text="택배 수령자"/>
-        </RadioGroup>
+                <RadioButton
+                    android:id="@+id/택배수령자"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="택배 수령자"/>
+            </RadioGroup>
 
         </LinearLayout>
         <LinearLayout
@@ -199,8 +199,9 @@
                 android:id="@+id/join_edittext_phone"
                 android:layout_width="150dp"
                 android:layout_height="35dp"
-                android:hint="   핸드폰 번호"
-                android:textSize="12dp" />
+                android:hint="핸드폰 번호 (번호만 입력해주세요)"
+                android:textSize="9dp" />
+
         </LinearLayout>
 
         <LinearLayout
