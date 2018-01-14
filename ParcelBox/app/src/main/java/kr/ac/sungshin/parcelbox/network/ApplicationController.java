@@ -6,6 +6,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
+<<<<<<< HEAD
  * Created by gominju on 2018. 1. 7..
  */
 
@@ -20,6 +21,19 @@ public class ApplicationController extends Application {
         return instance;
     }    // 인스턴스 객체 반환  왜? static 안드에서 static 으로 선언된 변수는 매번 객체를 새로 생성하지 않아도 다른 액티비티에서
     //자유롭게 사용가능합니다.
+=======
+ * Created by hyeona on 2018. 1. 8..
+ */
+
+public class ApplicationController extends Application {
+    private static ApplicationController instance;
+    private static String baseUrl = "http://13.124.188.254:3000";
+    private NetworkService networkService;
+
+    public static ApplicationController getInstance() {
+        return instance;
+    }
+>>>>>>> master
 
     public NetworkService getNetworkService() {
         return networkService;
@@ -43,5 +57,8 @@ public class ApplicationController extends Application {
 
         networkService = retrofit.create(NetworkService.class);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 }
