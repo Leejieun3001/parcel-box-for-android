@@ -43,7 +43,7 @@ public interface NetworkService {
     Call<RegisterResult> getRegisterParcel(@Body Register register);
 
     // 택배 목록 조회 (택배기사)
-    @GET("/delivery/showDeliveryList/")
+    @GET("/delivery/showDeliveryList/{user_idx}")
     Call<DeliveryListResult> getDeliveryList(@Path("user_idx") int user_idx);
 
 }
