@@ -8,11 +8,15 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import java.util.List;
 
 import kr.ac.sungshin.parcelbox.R;
 import kr.ac.sungshin.parcelbox.model.request.Delivery;
 import kr.ac.sungshin.parcelbox.model.request.Register;
+import kr.ac.sungshin.parcelbox.model.response.DeliveryListResult;
 import kr.ac.sungshin.parcelbox.model.response.RegisterResult;
 import kr.ac.sungshin.parcelbox.model.response.Result;
 import kr.ac.sungshin.parcelbox.network.ApplicationController;
@@ -28,6 +32,8 @@ public class DeliveryActivity extends AppCompatActivity {
     private String input_num;
     private RecyclerView recyclerView;
     private LinearLayoutManager layoutManager;
+    private DeliveryRecyclerAdapter adapter;
+    private List<DeliveryItem> itemList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +58,36 @@ public class DeliveryActivity extends AppCompatActivity {
     }
 
     private void getParcelList() {
+        int user_idx = 1; // 임시 택배기사 아이디
 
+        Call<DeliveryListResult> resultCall = networkService.getDeliveryList(user_idx);
+        resultCall.enqueue(new Callback<DeliveryListResult>() {
+            @Override
+            public void onResponse(Call<DeliveryListResult> call, Response<DeliveryListResult> response) {
+                if (response.isSuccessful()) {
+                    if (response.body().getMessage().equals("success")) {
+                        itemList = response.body().result.getList();
+                        settingAdapter(itemList);
+                        Log.i("mytag", "list size : " + response.body().result.getListSize());
+                    }
+                }
+                Log.i("mytag", "get response fail, " +response.body().getMessage());
+
+            }
+
+            @Override
+            public void onFailure(Call<DeliveryListResult> call, Throwable t) {
+                Log.i("mytag", "get list error, " + t.getMessage().toString());
+            }
+        });
+
+
+    }
+
+    private void settingAdapter(List<DeliveryItem> itemList) {
+        adapter = new DeliveryRecyclerAdapter(getApplicationContext(), itemList);
+        recyclerView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
     }
 
     private void registerNum() {
@@ -68,7 +103,7 @@ public class DeliveryActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<RegisterResult> call, Response<RegisterResult> response) {
                 // Log.i("mytag", "response : " + response.body().toString());
-                Log.i("mytag", "response : " + response.body().getMessage().toString());
+                Log.i("mytag", "response : " + response.body().getMessage());
                 if (response.isSuccessful()) {
                     if (response.body().getMessage().equals("fail")) {
                         Toast.makeText(getApplicationContext(), "이미 등록되어 있습니다.", Toast.LENGTH_SHORT).show();
