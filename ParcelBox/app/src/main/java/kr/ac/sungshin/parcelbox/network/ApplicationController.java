@@ -5,10 +5,6 @@ import android.app.Application;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-/**
- * Created by hyeona on 2018. 1. 8..
- */
-
 public class ApplicationController extends Application {
     private static ApplicationController instance;
     private static String baseUrl = "http://13.124.188.254:3000";
@@ -17,6 +13,7 @@ public class ApplicationController extends Application {
     public static ApplicationController getInstance() {
         return instance;
     }
+
 
     public NetworkService getNetworkService() {
         return networkService;
