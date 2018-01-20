@@ -110,8 +110,6 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<User> call, Response<User> response) {
                         if (response.isSuccessful()) {
-                            Log.d(TAG, response.body().toString());
-
                             editor.putInt("type", response.body().getType());
                             editor.putString("email", response.body().getEmail());
                             editor.putString("phone", response.body().getPhone());

@@ -1,9 +1,14 @@
 package kr.ac.sungshin.parcelbox.network;
 
+<<<<<<< Updated upstream
 import kr.ac.sungshin.parcelbox.model.request.Delivery;
 import kr.ac.sungshin.parcelbox.model.request.Join;
 import kr.ac.sungshin.parcelbox.model.request.Login;
 import kr.ac.sungshin.parcelbox.model.request.Register;
+=======
+import kr.ac.sungshin.parcelbox.model.request.Login;
+import kr.ac.sungshin.parcelbox.model.response.DeliveryList;
+>>>>>>> Stashed changes
 import kr.ac.sungshin.parcelbox.model.response.FindingInfo;
 import kr.ac.sungshin.parcelbox.model.response.Message;
 import kr.ac.sungshin.parcelbox.model.response.RegisterResult;
@@ -36,6 +41,7 @@ public interface NetworkService {
     @GET("/join/verificationCode/")
     Call<VerificationCodeResult> getVerifiCodeResult(@Query("tempEmail") String id);
 
+<<<<<<< Updated upstream
     @POST("/join")
     Call<Message> getJoinResult(@Body Join join);
 
@@ -44,3 +50,8 @@ public interface NetworkService {
     Call<RegisterResult> getRegisterParcel(@Body Register register);
 }
 
+=======
+    @GET("/users/get_parcel")
+    Call<DeliveryList> getDeliveryInfo();
+}
+>>>>>>> Stashed changes

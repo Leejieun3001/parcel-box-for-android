@@ -19,8 +19,13 @@
         </activity>
         <activity android:name=".login.JoinActivity" />
         <activity android:name=".login.FindInfoActivity" />
+<<<<<<< Updated upstream
         <activity android:name=".login.ShowIdActivity"></activity>
         <activity android:name=".delivery.DeliveryActivity">
+=======
+        <activity android:name=".login.ShowIdActivity" />
+        <activity android:name=".home.UserHomeActivity">
+>>>>>>> Stashed changes
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
