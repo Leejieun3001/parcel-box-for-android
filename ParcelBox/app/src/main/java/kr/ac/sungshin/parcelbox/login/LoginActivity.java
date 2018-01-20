@@ -2,6 +2,7 @@ package kr.ac.sungshin.parcelbox.login;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.nfc.Tag;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,13 +15,25 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.net.CookieManager;
+import java.net.CookiePolicy;
+import java.net.HttpCookie;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import kr.ac.sungshin.parcelbox.MainActivity;
 import kr.ac.sungshin.parcelbox.R;
+import kr.ac.sungshin.parcelbox.delivery.DeliveryActivity;
+import kr.ac.sungshin.parcelbox.home.UserHomeActivity;
 import kr.ac.sungshin.parcelbox.model.request.Login;
+import kr.ac.sungshin.parcelbox.model.response.LoginResult;
 import kr.ac.sungshin.parcelbox.model.response.User;
 import kr.ac.sungshin.parcelbox.network.ApplicationController;
 import kr.ac.sungshin.parcelbox.network.NetworkService;
+import kr.ac.sungshin.parcelbox.network.UserInfo;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -59,8 +72,34 @@ public class LoginActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
+        checkAutoLogin();
         bindClickListener();
         setUserEmail();
+    }
+
+    public void checkAutoLogin () {
+        final SharedPreferences userInfo = getSharedPreferences("user", MODE_PRIVATE);
+        boolean isAutoLogin = userInfo.getBoolean("isCheckedForAutoLogin", false);
+        boolean isSavingId = userInfo.getBoolean("isCheckedForSavingId", false);
+        String token = userInfo.getString("token", "");
+        if (isAutoLogin && !token.equals("")) {
+            ApplicationController.getInstance().setTokenOnHeader(token);
+
+            Intent intent;
+            int type = userInfo.getInt("type", 0);
+            if (type == 0) { intent = new Intent(getBaseContext(), UserHomeActivity.class); } // 택배기사
+            else { intent = new Intent(getBaseContext(), DeliveryActivity.class); }           // 일반 사용자
+
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            finish();
+        } else {
+            if (isAutoLogin) checkBoxAutoLogin.setChecked(true);
+            if (isSavingId) {
+                checkBoxSavingId.setChecked(true);
+                editTextEmail.setText(userInfo.getString("id", ""));
+            }
+        }
     }
 
     // 클릭 이벤트 바인딩
@@ -68,22 +107,16 @@ public class LoginActivity extends AppCompatActivity {
         checkBoxAutoLogin.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    checkBoxAutoLogin.setBackgroundResource(R.drawable.check_on);
-                } else {
-                    checkBoxAutoLogin.setBackgroundResource(R.drawable.check_off);
-                }
+                if (isChecked) { checkBoxAutoLogin.setButtonDrawable(R.drawable.check_on); }
+                else { checkBoxAutoLogin.setButtonDrawable(R.drawable.check_off); }
             }
         });
 
         checkBoxSavingId.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    checkBoxAutoLogin.setBackgroundResource(R.drawable.check_on);
-                } else {
-                    checkBoxAutoLogin.setBackgroundResource(R.drawable.check_off);
-                }
+                if (isChecked) { checkBoxSavingId.setButtonDrawable(R.drawable.check_on); }
+                else { checkBoxSavingId.setButtonDrawable(R.drawable.check_off); }
             }
         });
 
@@ -105,22 +138,44 @@ public class LoginActivity extends AppCompatActivity {
                 editor.apply();
 
                 Login info = new Login(email, password);
-                Call<User> checkLogin = service.getLoginResult(info);
-                checkLogin.enqueue(new Callback<User>() {
+                Call<LoginResult> checkLogin = service.getLoginResult(info);
+                checkLogin.enqueue(new Callback<LoginResult>() {
                     @Override
-                    public void onResponse(Call<User> call, Response<User> response) {
+                    public void onResponse(Call<LoginResult> call, Response<LoginResult> response) {
                         if (response.isSuccessful()) {
-                            editor.putInt("type", response.body().getType());
-                            editor.putString("email", response.body().getEmail());
-                            editor.putString("phone", response.body().getPhone());
-                            editor.putString("address", response.body().getAddress());
-                            editor.putString("company", response.body().getCompany());
-                            editor.apply();
+                            String message = response.body().getMessage();
+                            if (message.equals("NO_USER")) {
+                                Toast.makeText(getBaseContext(), "입력하신 회원정보는 존재하지 않습니다.", Toast.LENGTH_SHORT).show();
+                            } else if (message.equals("INCORRECT")) {
+                                Toast.makeText(getBaseContext(), "아이디 또는 비밀번호가 틀렸습니다.", Toast.LENGTH_SHORT).show();
+                            } else if (message.equals("SUCCESS")) {
+                                User user = response.body().getUser();
+                                int type = user.getType();
+                                String token = response.body().getToken();
+
+                                editor.putInt("type", type);
+                                editor.putString("id", user.getId());
+                                editor.putString("phone", user.getPhone());
+                                editor.putString("address", user.getAddress());
+                                editor.putString("company", user.getCompany());
+                                editor.putString("token", token);
+                                editor.apply();
+
+                                ApplicationController.getInstance().setTokenOnHeader(token);
+
+                                Intent intent;
+                                if (type == 0) { intent = new Intent(getBaseContext(), UserHomeActivity.class); } // 택배기사
+                                else { intent = new Intent(getBaseContext(), DeliveryActivity.class); }           // 일반 사용자
+
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent);
+                                finish();
+                            }
                         }
                     }
 
                     @Override
-                    public void onFailure(Call<User> call, Throwable t) {
+                    public void onFailure(Call<LoginResult> call, Throwable t) {
 
                     }
                 });

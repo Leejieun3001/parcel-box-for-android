@@ -6,6 +6,7 @@ import kr.ac.sungshin.parcelbox.model.request.Register;
 import kr.ac.sungshin.parcelbox.model.response.DeliveryList;
 import kr.ac.sungshin.parcelbox.model.response.DeliveryListResult;
 import kr.ac.sungshin.parcelbox.model.response.FindingInfo;
+import kr.ac.sungshin.parcelbox.model.response.LoginResult;
 import kr.ac.sungshin.parcelbox.model.response.Message;
 import kr.ac.sungshin.parcelbox.model.response.RegisterResult;
 import kr.ac.sungshin.parcelbox.model.response.User;
@@ -13,6 +14,7 @@ import kr.ac.sungshin.parcelbox.model.response.VerificationCodeResult;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
@@ -23,7 +25,7 @@ import retrofit2.http.Query;
 
 public interface NetworkService {
     @POST("/login")
-    Call<User> getLoginResult(@Body Login login);
+    Call<LoginResult> getLoginResult(@Body Login login);
 
     @POST("/login/find_id")
     Call<FindingInfo> getFindIdResult(@Body Login info);
@@ -46,7 +48,7 @@ public interface NetworkService {
 
     // 택배 목록 조회 (택배기사)
     @GET("/delivery/showDeliveryList/")
-    Call<DeliveryListResult> getDeliveryList(@Path("user_idx") int user_idx);
+    Call<DeliveryListResult> getDeliveryList(@Query("user_idx") int user_idx);
 
     @GET("/users/get_parcel")
     Call<DeliveryList> getDeliveryInfo();

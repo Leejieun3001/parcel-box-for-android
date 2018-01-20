@@ -41,9 +41,8 @@ public class UserHomeActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
-        itemDatas = new ArrayList<RecyclerViewData>();
 
-        Call<DeliveryList> getDeliveryInfo =service.getDeliveryInfo();
+        Call<DeliveryList> getDeliveryInfo = service.getDeliveryInfo();
         getDeliveryInfo.enqueue(new Callback<DeliveryList>() {
             @Override
             public void onResponse(retrofit2.Call<DeliveryList> call, Response<DeliveryList> response) {
@@ -51,11 +50,12 @@ public class UserHomeActivity extends AppCompatActivity {
                     String message = response.body().getMessage();
                     if (message.equals("EXIST_DATA")) {
                         Log.d(TAG, "EXIST_DATA");
-                        itemDatas.addAll(response.body().getData());
+                        itemDatas= response.body().getData();
                     }
                     Log.d(TAG, "size: " + itemDatas.size());
                     recyclerAdapter = new RecyclerViewAdapter(itemDatas);
                     recyclerView.setAdapter(recyclerAdapter);
+                    recyclerAdapter.notifyDataSetChanged();
                 }
             }
 

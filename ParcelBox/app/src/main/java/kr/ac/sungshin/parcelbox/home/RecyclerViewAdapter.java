@@ -1,5 +1,6 @@
 package kr.ac.sungshin.parcelbox.home;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,13 +19,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     private final String TAG = "RecyclerViewAdapter";
     private final int VIEW_TYPE_HEADER = 1;
     private final int VIEW_TYPE_ITEM = 2;
-    private ArrayList<RecyclerViewData> itemDatas = new ArrayList<RecyclerViewData>();
+    private ArrayList<RecyclerViewData> itemDatas;
 
     public RecyclerViewAdapter(ArrayList<RecyclerViewData> itemDatas) {
-        Log.d(TAG, "생성자시작");
-        this.itemDatas.addAll(itemDatas);
-        notifyDataSetChanged();
-        Log.d(TAG, "생성자끝");
+        this.itemDatas = itemDatas;
     }
 
     public void setAdapter(ArrayList<RecyclerViewData> itemDatas) {
@@ -55,22 +53,22 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        Log.d(TAG, "onBindViewHolder");
+        Log.d(TAG, "position: " + position);
         if (holder instanceof RecyclerViewHolder) {
-            Log.d(TAG, "position: " + position + ", " + itemDatas.get(position - 1).courier_name);
-            ((RecyclerViewHolder) holder).textViewDeliverName.setText(itemDatas.get(position - 1).courier_name);
-            ((RecyclerViewHolder) holder).textViewParcelInfo.setText(itemDatas.get(position - 1).parcel_info);
-            ((RecyclerViewHolder) holder).textViewParcelNum.setText(itemDatas.get(position - 1).parcel_num);
+            Log.d(TAG, "position: " + position + ", " + itemDatas.get(position - 1).getCourier_name());
+            ((RecyclerViewHolder) holder).textViewDeliverName.setText(itemDatas.get(position - 1).getCourier_name());
+            ((RecyclerViewHolder) holder).textViewParcelInfo.setText(itemDatas.get(position - 1).getParcel_info());
+            ((RecyclerViewHolder) holder).textViewParcelNum.setText(itemDatas.get(position - 1).getParcel_num());
         }
     }
 
     @Override
-    public int getItemCount() {
-        return itemDatas != null ? itemDatas.size() + 1 : 1;
+    public int getItemCount() { return itemDatas != null ? itemDatas.size() + 1 : 1;
     }
 
     @Override
     public int getItemViewType(int position) {
+        Log.d(TAG, "getItemViewType : " + position);
         if (position == 0) return VIEW_TYPE_HEADER;
         else return VIEW_TYPE_ITEM;
     }
