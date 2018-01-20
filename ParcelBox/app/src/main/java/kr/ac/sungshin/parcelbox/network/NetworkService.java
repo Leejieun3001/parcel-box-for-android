@@ -4,6 +4,7 @@ import kr.ac.sungshin.parcelbox.model.request.Delivery;
 import kr.ac.sungshin.parcelbox.model.request.Join;
 import kr.ac.sungshin.parcelbox.model.request.Login;
 import kr.ac.sungshin.parcelbox.model.request.Register;
+import kr.ac.sungshin.parcelbox.model.response.DeliveryListResult;
 import kr.ac.sungshin.parcelbox.model.response.FindingInfo;
 import kr.ac.sungshin.parcelbox.model.response.Message;
 import kr.ac.sungshin.parcelbox.model.response.RegisterResult;
@@ -14,6 +15,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 /**
@@ -42,5 +44,10 @@ public interface NetworkService {
     // 운송장번호 등록
     @POST("/delivery/registerParcel/")
     Call<RegisterResult> getRegisterParcel(@Body Register register);
+
+    // 택배 목록 조회 (택배기사)
+    @GET("/delivery/showDeliveryList/")
+    Call<DeliveryListResult> getDeliveryList(@Path("user_idx") int user_idx);
+
 }
 

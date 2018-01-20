@@ -6,9 +6,10 @@ package kr.ac.sungshin.parcelbox.delivery;
 
 public class DeliveryItem {
     private int num;
-    private String type;
+    private String parcel_info;
     private String address;
     private String name;
+    private int status;
 
     public int getNum() {
         return num;
@@ -18,12 +19,12 @@ public class DeliveryItem {
         this.num = num;
     }
 
-    public String getType() {
-        return type;
+    public String getParcel_info() {
+        return parcel_info;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setParcel_info(String parcel_info) {
+        this.parcel_info = parcel_info;
     }
 
     public String getAddress() {
@@ -40,5 +41,13 @@ public class DeliveryItem {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 }
