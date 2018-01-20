@@ -1,7 +1,6 @@
 package kr.ac.sungshin.parcelbox.model.request;
 
 /**
-<<<<<<< HEAD
  * Created by LG on 2018-01-12.
  */
 public class Join {
