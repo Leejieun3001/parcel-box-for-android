@@ -8,12 +8,16 @@ public class Result {
     String message;
     String detail;
 
-    public Result(String message , String detail){
+    public Result(String message, String detail) {
         this.message = message;
         this.detail = detail;
     }
 
-    public String getMessage(){return  message;}
-    public String getDetail(){ return  detail;}
+    public String getMessage() {
+        return message;
+    }
 
+    public String getDetail() {
+        return detail;
+    }
 }

@@ -1,17 +1,13 @@
 package kr.ac.sungshin.parcelbox.network;
 
-<<<<<<< HEAD
-/**
- * Created by gominju on 2018. 1. 7..
- */
-
-public interface NetworkService {
-}
-=======
+import kr.ac.sungshin.parcelbox.model.request.Delivery;
 import kr.ac.sungshin.parcelbox.model.request.Join;
 import kr.ac.sungshin.parcelbox.model.request.Login;
+import kr.ac.sungshin.parcelbox.model.request.Register;
 import kr.ac.sungshin.parcelbox.model.response.FindingInfo;
 import kr.ac.sungshin.parcelbox.model.response.Message;
+import kr.ac.sungshin.parcelbox.model.response.RegisterResult;
+import kr.ac.sungshin.parcelbox.model.response.Result;
 import kr.ac.sungshin.parcelbox.model.response.User;
 import kr.ac.sungshin.parcelbox.model.response.VerificationCodeResult;
 import retrofit2.Call;
@@ -39,5 +35,8 @@ public interface NetworkService {
 
     @GET("/join/verificationCode/")
     Call<VerificationCodeResult> getVerifiCodeResult(@Query("tempEmail") String id);
+
+    // 운송장번호 등록
+    @POST("/delivery/registerParcel/")
+    Call<RegisterResult> getRegisterParcel(@Body Register register);
 }
->>>>>>> master
