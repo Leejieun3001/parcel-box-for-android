@@ -16,7 +16,10 @@
             android:id="@+id/join_button_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="로그인 화면으로" />
+            android:text="로그인 화면으로"
+            android:padding="15dp"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/button_background"/>
 
     </LinearLayout>
 
@@ -72,14 +75,21 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="4dp"
-                android:text="이메일 중복확인" />
+                android:padding="15dp"
+                android:text="이메일 중복확인"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/button_background"/>
 
             <Button
                 android:id="@+id/join_button_requestcode"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="4dp"
-                android:text="이메일 인증번호 요청" />
+                android:padding="15dp"
+                android:text="이메일 인증번호 요청"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/button_background"
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -105,7 +115,10 @@
                 android:id="@+id/join_button_checkcode"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="인증" />
+                android:text="인증"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/button_background"
+                />
 
         </LinearLayout>
 
@@ -254,6 +267,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="4dp"
             android:text="회원가입 완료"
-            android:shadowColor="@color/colorWhite"/>
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/button_background"/>
     </LinearLayout>
 </LinearLayout>
