@@ -36,7 +36,7 @@ public class DeliveryRecyclerAdapter extends RecyclerView.Adapter<DeliveryRecycl
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         DeliveryItem item = list.get(position);
-        holder.number.setText(position + 1);
+        holder.number.setText(String.valueOf(position + 1));
         holder.type.setText(item.getParcel_info());
         holder.addr.setText(item.getAddress());
         holder.name.setText(item.getName());

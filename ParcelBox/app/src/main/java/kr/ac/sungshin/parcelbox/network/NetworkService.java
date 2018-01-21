@@ -45,8 +45,8 @@ public interface NetworkService {
     Call<RegisterResult> getRegisterParcel(@Body Register register);
 
     // 택배 목록 조회 (택배기사)
-    @GET("/delivery/showDeliveryList/{user_idx}")
-    Call<DeliveryListResult> getDeliveryList(@Path("user_idx") int user_idx);
+    @GET("/delivery/showDeliveryList/")
+    Call<DeliveryListResult> getDeliveryList(@Query("user_idx") int user_idx);
 
     @GET("/users/get_parcel")
     Call<DeliveryList> getDeliveryInfo();

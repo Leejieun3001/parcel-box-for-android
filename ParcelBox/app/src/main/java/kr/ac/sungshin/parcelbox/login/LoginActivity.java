@@ -17,6 +17,8 @@ import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import kr.ac.sungshin.parcelbox.R;
+import kr.ac.sungshin.parcelbox.delivery.DeliveryActivity;
+import kr.ac.sungshin.parcelbox.home.UserHomeActivity;
 import kr.ac.sungshin.parcelbox.model.request.Login;
 import kr.ac.sungshin.parcelbox.model.response.User;
 import kr.ac.sungshin.parcelbox.network.ApplicationController;
@@ -54,6 +56,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+        Log.i(TAG, "oncreate");
 
         service = ApplicationController.getInstance().getNetworkService();
         ActionBar actionBar = getSupportActionBar();
@@ -116,12 +119,24 @@ public class LoginActivity extends AppCompatActivity {
                             editor.putString("address", response.body().getAddress());
                             editor.putString("company", response.body().getCompany());
                             editor.apply();
+
+                            if (response.body().getType() == 0) { // 택배기사
+                                Intent intent = new Intent(getApplicationContext(), DeliveryActivity.class);
+                                //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                //intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent);
+                            } else {
+                                Intent intent = new Intent(getApplicationContext(), UserHomeActivity.class);
+                                //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                //intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent);
+                            }
                         }
                     }
 
                     @Override
                     public void onFailure(Call<User> call, Throwable t) {
-
+                        Toast.makeText(getApplicationContext(), "네트워크 연결을 확인해주세요.",Toast.LENGTH_SHORT).show();
                     }
                 });
             }

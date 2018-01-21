@@ -34,6 +34,7 @@ public class DeliveryActivity extends AppCompatActivity {
     private LinearLayoutManager layoutManager;
     private DeliveryRecyclerAdapter adapter;
     private List<DeliveryItem> itemList;
+    private int user_idx = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,13 +53,14 @@ public class DeliveryActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "번호를 입력해주세요.", Toast.LENGTH_SHORT).show();
                 } else {
                     registerNum();
+                    getParcelList();
                 }
             }
         });
     }
 
     private void getParcelList() {
-        int user_idx = 1; // 임시 택배기사 아이디
+        Log.i("mytag", "getParcelList");
 
         Call<DeliveryListResult> resultCall = networkService.getDeliveryList(user_idx);
         resultCall.enqueue(new Callback<DeliveryListResult>() {
@@ -70,9 +72,10 @@ public class DeliveryActivity extends AppCompatActivity {
                         settingAdapter(itemList);
                         Log.i("mytag", "list size : " + response.body().result.getListSize());
                     }
+                } else {
+                    Log.i("mytag", "fail " + response.body().toString());
                 }
-                Log.i("mytag", "get response fail, " +response.body().getMessage());
-
+                Log.i("mytag", "get response fail, " + response.body().getMessage());
             }
 
             @Override
@@ -96,7 +99,7 @@ public class DeliveryActivity extends AppCompatActivity {
         register.setParcel_idx(1);
         register.setParcel_num(input_num);
         register.setState(1);
-        register.setUser_idx(1);
+        register.setUser_idx(user_idx);
 
         Call<RegisterResult> resultCall = networkService.getRegisterParcel(register);
         resultCall.enqueue(new Callback<RegisterResult>() {

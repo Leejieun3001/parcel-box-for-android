@@ -5,7 +5,7 @@ package kr.ac.sungshin.parcelbox.model.response;
  */
 
 public class User {
-    private int type;
+    private int type;   // 택배기사(0), 사용자(1)
     private String email;
     private String name;
     private String address;
