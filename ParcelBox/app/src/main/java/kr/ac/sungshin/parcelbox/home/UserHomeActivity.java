@@ -53,9 +53,9 @@ public class UserHomeActivity extends AppCompatActivity {
                         itemDatas= response.body().getData();
                     }
                     Log.d(TAG, "size: " + itemDatas.size());
-                    recyclerAdapter = new RecyclerViewAdapter(itemDatas);
-                    recyclerView.setAdapter(recyclerAdapter);
+                    recyclerAdapter = new RecyclerViewAdapter(getBaseContext(), itemDatas);
                     recyclerAdapter.notifyDataSetChanged();
+                    recyclerView.setAdapter(recyclerAdapter);
                 }
             }
 

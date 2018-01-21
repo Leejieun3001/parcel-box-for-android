@@ -11,7 +11,6 @@ public class RecyclerViewData {
     private int state;
     private String qr_code;
 
-
     public RecyclerViewData() { }
 
     public RecyclerViewData(String parcel_info, String courier_name, String parcel_num, int state, String qr_code) {
