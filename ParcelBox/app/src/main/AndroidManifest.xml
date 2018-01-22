@@ -24,7 +24,8 @@
         </activity>
         <activity android:name=".login.JoinActivity" />
         <activity android:name=".login.FindInfoActivity" />
-        <activity android:name=".login.ShowIdActivity" />
+
+        <activity android:name=".login.ShowIdActivity"/>
         <activity android:name=".delivery.DeliveryActivity">
 
         </activity>

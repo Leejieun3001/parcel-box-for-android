@@ -5,16 +5,16 @@ package kr.ac.sungshin.parcelbox.model.response;
  */
 
 public class User {
-    private int type;   // 택배기사(0), 사용자(1)
-    private String email;
+    private int type;  // 택배기사(0), 사용자(1)
+    private String id;
     private String name;
     private String address;
     private String phone;
     private String company;
 
-    public User(int type, String email, String name, String address, String phone, String company) {
+    public User(int type, String id, String name, String address, String phone, String company) {
         this.type = type;
-        this.email = email;
+        this.id = id;
         this.name = name;
         this.address = address;
         this.phone = phone;
@@ -25,18 +25,23 @@ public class User {
     public int getType() {
         return type;
     }
-    public String getEmail() {
-        return email;
+
+    public String getId() {
+        return id;
     }
+
     public String getName() {
         return name;
     }
+
     public String getAddress() {
         return address;
     }
+
     public String getPhone() {
         return phone;
     }
+
     public String getCompany() {
         return company;
     }
