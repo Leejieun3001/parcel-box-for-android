@@ -11,8 +11,9 @@ public class User {
     private String address;
     private String phone;
     private String company;
+    private int idx;
 
-    public User(int type, String id, String name, String address, String phone, String company) {
+    public User(int type, String id, String name, String address, String phone, String company, int idx) {
         this.type = type;
         this.id = id;
         this.name = name;
@@ -44,5 +45,13 @@ public class User {
 
     public String getCompany() {
         return company;
+    }
+
+    public int getIdx() {
+        return idx;
+    }
+
+    public void setIdx(int idx) {
+        this.idx = idx;
     }
 }

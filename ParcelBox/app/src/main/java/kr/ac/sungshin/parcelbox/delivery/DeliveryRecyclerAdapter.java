@@ -44,8 +44,8 @@ public class DeliveryRecyclerAdapter extends RecyclerView.Adapter<DeliveryRecycl
         holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent =new Intent(context, WriteGameRecordActivity.class);
-//                context.startActivity(intent);
+               // QRCodeDialog dialog = new QRCodeDialog(context);
+               // dialog.show();
             }
         });
     }

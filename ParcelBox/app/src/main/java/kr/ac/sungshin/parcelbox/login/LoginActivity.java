@@ -170,17 +170,18 @@ public class LoginActivity extends AppCompatActivity {
                                 editor.putString("address", user.getAddress());
                                 editor.putString("company", user.getCompany());
                                 editor.putString("token", token);
+                                editor.putInt("user_idx", user.getIdx());
                                 editor.apply();
 
                                 ApplicationController.getInstance().setTokenOnHeader(token);
 
                                 Intent intent;
-                                if (type == 0) {
-                                    intent = new Intent(getBaseContext(), UserHomeActivity.class);
-                                } // 택배기사
-                                else {
+                                if (type == 0) { // 택배기사
                                     intent = new Intent(getBaseContext(), DeliveryActivity.class);
-                                }           // 일반 사용자
+                                }
+                                else { // 일반 사용자
+                                    intent = new Intent(getBaseContext(), UserHomeActivity.class);
+                                }
 
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                 startActivity(intent);

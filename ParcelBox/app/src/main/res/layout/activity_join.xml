@@ -16,10 +16,10 @@
             android:id="@+id/join_button_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="로그인 화면으로"
+            android:background="@drawable/button_background"
             android:padding="15dp"
-            android:textColor="@color/colorWhite"
-            android:background="@drawable/button_background"/>
+            android:text="로그인 화면으로"
+            android:textColor="@color/colorWhite" />
 
     </LinearLayout>
 
@@ -75,21 +75,20 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="4dp"
+                android:background="@drawable/button_background"
                 android:padding="15dp"
                 android:text="이메일 중복확인"
-                android:textColor="@color/colorWhite"
-                android:background="@drawable/button_background"/>
+                android:textColor="@color/colorWhite" />
 
             <Button
                 android:id="@+id/join_button_requestcode"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="4dp"
+                android:background="@drawable/button_background"
                 android:padding="15dp"
                 android:text="이메일 인증번호 요청"
-                android:textColor="@color/colorWhite"
-                android:background="@drawable/button_background"
-                />
+                android:textColor="@color/colorWhite" />
         </LinearLayout>
 
         <LinearLayout
@@ -115,10 +114,9 @@
                 android:id="@+id/join_button_checkcode"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="인증"
-                android:textColor="@color/colorWhite"
                 android:background="@drawable/button_background"
-                />
+                android:text="인증"
+                android:textColor="@color/colorWhite" />
 
         </LinearLayout>
 
@@ -181,23 +179,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/택배기사"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:checked="true"
-                    android:textColor="@color/colorWhite"
-                    android:text="택배기사" />
+                    android:text="택배기사"
+                    android:textColor="@color/colorWhite" />
 
                 <RadioButton
                     android:id="@+id/택배수령자"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textColor="@color/colorWhite"
-                    android:text="택배 수령자" />
+                    android:text="택배 수령자"
+                    android:textColor="@color/colorWhite" />
             </RadioGroup>
 
         </LinearLayout>
@@ -214,8 +211,8 @@
                 android:id="@+id/join_edittext_name"
                 android:layout_width="150dp"
                 android:layout_height="35dp"
-                android:hint="   이름"
                 android:background="@drawable/white_underline"
+                android:hint="   이름"
                 android:textColor="@color/colorWhite"
                 android:textColorHint="@color/colorWhite"
                 android:textSize="12dp" />
@@ -233,8 +230,8 @@
                 android:id="@+id/join_edittext_phone"
                 android:layout_width="150dp"
                 android:layout_height="35dp"
-                android:hint="핸드폰 번호 (번호만 입력해주세요)"
                 android:background="@drawable/white_underline"
+                android:hint="핸드폰 번호 (번호만 입력해주세요)"
                 android:textColor="@color/colorWhite"
                 android:textColorHint="@color/colorWhite"
                 android:textSize="9dp" />
@@ -253,8 +250,8 @@
                 android:id="@+id/join_edittext_address"
                 android:layout_width="150dp"
                 android:layout_height="35dp"
-                android:hint="   거주지 정보"
                 android:background="@drawable/white_underline"
+                android:hint="   거주지 정보"
                 android:textColor="@color/colorWhite"
                 android:textColorHint="@color/colorWhite"
                 android:textSize="12dp" />
@@ -266,8 +263,8 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="4dp"
+            android:background="@drawable/button_background"
             android:text="회원가입 완료"
-            android:textColor="@color/colorWhite"
-            android:background="@drawable/button_background"/>
+            android:textColor="@color/colorWhite" />
     </LinearLayout>
 </LinearLayout>

@@ -11,11 +11,15 @@ import kr.ac.sungshin.parcelbox.model.response.Message;
 import kr.ac.sungshin.parcelbox.model.response.RegisterResult;
 import kr.ac.sungshin.parcelbox.model.response.User;
 import kr.ac.sungshin.parcelbox.model.response.VerificationCodeResult;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -43,8 +47,11 @@ public interface NetworkService {
     Call<Message> getJoinResult(@Body Join join);
 
     // 운송장번호 등록
+//    @POST("/delivery/registerParcel/")
+//    Call<RegisterResult> getRegisterParcel(@Body Register register);
+    @Multipart
     @POST("/delivery/registerParcel/")
-    Call<RegisterResult> getRegisterParcel(@Body Register register);
+    Call<Message> getRegisterParcel(@Part("register") Register register, @Part MultipartBody.Part qrCode);
 
     // 택배 목록 조회 (택배기사)
     @GET("/delivery/showDeliveryList/")
@@ -52,4 +59,6 @@ public interface NetworkService {
 
     @GET("/users/get_parcel")
     Call<DeliveryList> getDeliveryInfo();
+
+
 }

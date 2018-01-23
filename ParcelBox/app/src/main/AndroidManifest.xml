@@ -14,8 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
-        <activity android:name=".login.LoginActivity"
-            android:windowSoftInputMode="adjustResize" >
+        <activity
+            android:name=".login.LoginActivity"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,14 +25,10 @@
         </activity>
         <activity android:name=".login.JoinActivity" />
         <activity android:name=".login.FindInfoActivity" />
-
-        <activity android:name=".login.ShowIdActivity"/>
-        <activity android:name=".delivery.DeliveryActivity">
-
-        </activity>
-        <activity android:name=".home.UserHomeActivity">
-
-        </activity>
+        <activity android:name=".login.ShowIdActivity" />
+        <activity android:name=".delivery.DeliveryActivity"></activity>
+        <activity android:name=".home.UserHomeActivity"></activity>
+        <activity android:name=".delivery.QRCodeDialog"></activity>
     </application>
 
 </manifest>
